@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { createDragon, getDragons } from "./dragonsSlice";
+import { createDragon, deleteDragon, incrementAsync, selectDragons, selectNbDragons} from "./dragonsSlice";
 import uuid from "react-uuid";
 
 export function Dragons() {
@@ -8,18 +8,24 @@ export function Dragons() {
   const [inputName, setInputName] = useState("");
   const [inputOld, setInputOld] = useState("");
 
-  // const dragons = useSelector((state) => state.dragons);
-  const dragons = useSelector((state) => state.dragons);
-  //const dragons = dispatch(getDragons());
-
-  const handleClick = () => {
+  const dragons = useSelector(selectDragons);
+  const nbDragons = useSelector(selectNbDragons);
+  
+  const handleCreateDragon = () => {
     const id = uuid();
     dispatch(createDragon({ id: id, name: inputName, old: inputOld }));
+    dispatch(incrementAsync(1));
+  };
+
+  const handleDeleteDragon = (id) => {
+    dispatch(deleteDragon(id));
+    dispatch(incrementAsync(-1));
   };
 
   return (
     <div>
       <div>
+        <h2>Nb dragon : {nbDragons}</h2>
         <h1>Dragons</h1>
         <label>Name</label>
         <input
@@ -34,12 +40,13 @@ export function Dragons() {
           value={inputOld}
           onChange={(e) => setInputOld(e.target.value)}
         />
-        <button onClick={handleClick}>Ajouter un dragon</button>
+        <button onClick={handleCreateDragon}>Ajouter un dragon</button>
       </div>
       <ul>
-        {dragons.dragons.map((dragon, index) => (
-          <li key={index}>
+        {dragons.map((dragon) => (
+          <li key={dragon.id}> 
             {dragon.name} - {dragon.old}
+            <button onClick={() => handleDeleteDragon(dragon.id)}>X</button>
           </li>
         ))}
       </ul>
