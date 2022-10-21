@@ -1,13 +1,30 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@font-face {
+  font-family: "CarterOne-Regular";
+  src: local("CarterOne-Regular"),
+    url("./fonts/CarterOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Inter-VariableFont";
+  src: local("Inter-VariableFont"),
+    url("./fonts/Inter-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Prelo-Bold";
+  src: local("Prelo-Bold"), url("./fonts/Prelo-Bold.ttf") format("truetype");
 }

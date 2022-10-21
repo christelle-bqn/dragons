@@ -1,0 +1,142 @@
+.title {
+  color: #54643d;
+}
+
+.createContainer {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #efb368;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.textNbDragons {
+  font-size: 22px;
+  color: #3c394f;
+  font-family: "Prelo-Bold";
+}
+
+.inputsContainer {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.inputName {
+  margin-right: 20px;
+}
+
+.input {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #ffffff;
+  font-size: 15px;
+}
+
+.label {
+  font-size: 20px;
+  font-family: "Prelo-Bold";
+  color: #874832;
+  margin-right: 10px;
+}
+
+.textDragons {
+  font-size: 22px;
+  font-family: "Prelo-Bold";
+  color: #3c394f;
+  margin-bottom: 10px;
+}
+
+.titleCreate {
+  font-size: 22px;
+  font-family: "Prelo-Bold";
+  color: #874832;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.buttonCreate {
+  background-color: #ab503b;
+  color: #ffffff;
+  font-family: "Prelo-Bold";
+  border-style: solid;
+  border-width: 1px;
+  border-color: #874832;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.buttonCreate:hover {
+  background-color: #da6a50;
+}
+
+.tableDragons {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tableDragons td,
+.tableDragons th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.tableDragons tr {
+  background-color: #f2f2f2;
+}
+
+.tableDragons tr:hover {
+  background-color: #ddd;
+}
+
+.tableDragons th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #7e9ebc;
+  color: white;
+  font-size: 18px;
+  font-family: "Prelo-Bold";
+}
+
+.tableDragons td {
+  color: #3c394f;
+  font-size: 18px;
+  font-family: "Prelo-Bold";
+}
+
+.button {
+  font-family: "Prelo-Bold";
+  cursor: pointer;
+  font-size: 13px;
+  color: #ffffff;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #ffffff;
+  border-radius: 10px;
+  background-color: #524d6c;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: #3c394f;
+  border-color: #3c394f;
+}
+
+.inputNameUpdate {
+  margin-right: 5px;
+}
+
+.inputUpdate {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #ffffff;
+  font-size: 15px;
+}

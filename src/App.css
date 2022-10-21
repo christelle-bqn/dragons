@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+  background-color: #f6f0e0;
+  padding: 0px 50px;
 }
 
 .App-logo {
@@ -36,4 +41,16 @@
   100% {
     transform: translateY(0px);
   }
+}
+
+.font-carter-one {
+  font-family: "CarterOne-Regular";
+}
+
+.font-inter {
+  font-family: "Inter-VariableFont";
+}
+
+.font-preloBold {
+  font-family: "Prelo-Bold";
 }

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { fetchCount } from './dragonsAPI';
+import { fetchCount } from "./dragonsAPI";
 
 const initialState = {
   dragons: [],
@@ -8,7 +8,7 @@ const initialState = {
 };
 
 export const incrementAsync = createAsyncThunk(
-  'counter/fetchCount',
+  "counter/fetchCount",
   async (amount) => {
     const response = await fetchCount(amount);
     return response.data;
@@ -25,6 +25,21 @@ export const dragonsSlice = createSlice({
       state.dragons = dragons;
     },
 
+    updateDragon: (state, action) => {
+      const dragons = [...state.dragons];
+      const index = dragons.findIndex(
+        (dragon) => dragon.id === action.payload.dragon.id
+      );
+
+      dragons.splice(index, 1, {
+        id: action.payload.dragon.id,
+        name: action.payload.updateValues.name,
+        old: action.payload.updateValues.old,
+      });
+
+      state.dragons = dragons;
+    },
+
     deleteDragon: (state, action) => {
       const dragons = [...state.dragons];
       const index = dragons.findIndex((dragon) => dragon.id === action.payload);
@@ -35,17 +50,17 @@ export const dragonsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(incrementAsync.pending, (state) => {
-        state.status = 'loading';
+        state.status = "loading";
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
-        state.status = 'idle';
-        state.nbDragons += action.payload; 
+        state.status = "idle";
+        state.nbDragons += action.payload;
       });
   },
 });
 
-
-export const { createDragon, deleteDragon } = dragonsSlice.actions;
+export const { createDragon, updateDragon, deleteDragon } =
+  dragonsSlice.actions;
 
 export const selectDragons = (state) => state.dragons.dragons;
 
